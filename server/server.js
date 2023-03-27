@@ -82,7 +82,7 @@ app.get('/card/:id', (req, res)=>{
     });
 });
 // Create Card
-app.post('/generate', (req, res)=>{    
+app.post('/card/generate', (req, res)=>{    
     createCard(req.body).then(function(newCard){
     
         res.json(newCard);
