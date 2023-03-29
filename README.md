@@ -1,4 +1,6 @@
 # business-card
+QR CODE BUSINESS CARD SITE
+basic concept: site for sharing your business card without the need of a physical copy. Essentially you need two things: a personalized card page; and a way of sharing your card easily (QR Codes).
 
 LINKS:
     working site: https://businesscard-qr-coder.netlify.app/
