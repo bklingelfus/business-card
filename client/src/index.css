@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* getting font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Shadows+Into+Light&family=Xanh+Mono:ital@0;1&display=swap');
+
+/* settings up tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+    * {
+        font-family: 'Cormorant Garamond', serif;
+        /* Borders to help position things */
+        /* border: 1px solid black; */
+    }
+    .loader {
+        border: 16px solid #e0e0e0; /* Circle */
+        border-top: 16px solid #f14e4e; /* Spinner*/
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+    .modal {
+        background-color: #f4f4f584;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+    .field-container {
+        @apply my-8 sm:my-6 md:mx-auto max-w-[600px] md:w-11/12 flex justify-between rounded-md 
+    }
+    .form-label {
+        @apply  text-xl w-1/4 min-w-[60px] py-1 sm:text-lg
+        bg-zinc-200 dark:bg-zinc-700
+        rounded-l-md border-zinc-400 dark:border-zinc-500 border-[1px]
+    }
+    .form-input {
+        @apply  flex-1 text-xl py-1 px-2 sm:text-lg
+        rounded-r-md border-zinc-400 dark:border-zinc-500 border-[1px] 
+        dark:bg-zinc-50 dark:text-zinc-700
+    }
+    .form-button {
+        @apply  rounded mx-auto text-2xl py-2 px-4 
+        bg-zinc-600 dark:bg-zinc-300 text-zinc-100 dark:text-zinc-700 
+        hover:bg-zinc-400 hover:dark:bg-zinc-400 hover:text-zinc-800
+    }
+    .card-link-button {
+        @apply  rounded text-xl py-1 px-4 
+        bg-zinc-600 dark:bg-zinc-300 text-zinc-100 dark:text-zinc-700 
+        hover:bg-zinc-400 hover:dark:bg-zinc-400 hover:text-zinc-800
+    }
 }
+

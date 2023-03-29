@@ -41,12 +41,11 @@ app.use(cors());
 // ----------------------------------
 async function getCards(id){
     let Cards = {};
+    // check for specific card or all cards
     if (id===null){
         Cards = await Card.find();
-
     } else {
         Cards = await Card.find({_id:id});
-
     }
     return Cards;
 }
@@ -59,7 +58,6 @@ async function createCard(body){
 // ----------------------------------
 // - - - ROUTES - - - - - - - - - - - 
 // ----------------------------------
-//localhost:3000
 app.get('/api' , (req, res) => {
     res.json({
     test: 'whatever'
